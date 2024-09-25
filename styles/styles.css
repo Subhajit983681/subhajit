@@ -255,3 +255,7 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+h1#my-first-testing-cards {
+  text-align: center;
+}
