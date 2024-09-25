@@ -7,7 +7,6 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     li.classList.add('card-item');
-    
     while (row.firstElementChild) {
       li.append(row.firstElementChild);
     }
