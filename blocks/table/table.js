@@ -1,35 +1,50 @@
 async function createTableHeader(table) {
   const tr = document.createElement('tr');
   const sno = document.createElement('th'); sno.appendChild(document.createTextNode('SNo'));
-  const conuntry = document.createElement('th'); conuntry.appendChild(document.createTextNode('countries'));
-  const continenth = document.createElement('th'); continenth.appendChild(document.createTextNode('continent'));
-  const capitalh = document.createElement('th'); capitalh.appendChild(document.createTextNode('capital'));
-  const abbr = document.createElement('th'); abbr.appendChild(document.createTextNode('Currency'));
-  tr.append(sno); tr.append(conuntry); tr.append(capitalh); tr.append(continenth); tr.append(abbr);
+  const conuntry = document.createElement('th'); conuntry.appendChild(document.createTextNode('Player Name'));
+  const continenth = document.createElement('th'); continenth.appendChild(document.createTextNode('Country'));
+  const capitalh = document.createElement('th'); capitalh.appendChild(document.createTextNode('Runs'));
+  const matchTH = document.createElement('th'); matchTH.appendChild(document.createTextNode('Match'));
+  const innTH = document.createElement('th'); innTH.appendChild(document.createTextNode('Innings'));
+  const avgTh = document.createElement('th'); avgTh.appendChild(document.createTextNode('Avg'));
+  tr.append(sno);
+  tr.append(conuntry);
+  tr.append(capitalh);
+  tr.append(continenth);
+  tr.append(matchTH);
+  tr.append(innTH);
+  tr.append(avgTh);
   table.append(tr);
 }
 async function createTableRow(table, row, i) {
   const tr = document.createElement('tr');
   const sno = document.createElement('td'); sno.appendChild(document.createTextNode(i));
-  const conuntry = document.createElement('td'); conuntry.appendChild(document.createTextNode(row.Countries));
-  const continent = document.createElement('td'); continent.appendChild(document.createTextNode(row.Capital));
-  const capital = document.createElement('td'); capital.appendChild(document.createTextNode(row.Continent));
-  const abbr = document.createElement('td'); abbr.appendChild(document.createTextNode(row.Currency));
-  tr.append(sno); tr.append(conuntry); tr.append(continent); tr.append(capital); tr.append(abbr);
+  const conuntry = document.createElement('td'); conuntry.appendChild(document.createTextNode(row.player_name));
+  const continent = document.createElement('td'); continent.appendChild(document.createTextNode(row.country));
+  const capital = document.createElement('td'); capital.appendChild(document.createTextNode(row.runs));
+  const abbr = document.createElement('td'); abbr.appendChild(document.createTextNode(row.match));
+  const inn = document.createElement('td'); inn.appendChild(document.createTextNode(row.innings));
+  const avg = document.createElement('td'); avg.appendChild(document.createTextNode(row.avg));
+  tr.append(sno);
+  tr.append(conuntry);
+  tr.append(continent);
+  tr.append(capital);
+  tr.append(abbr);
+  tr.append(inn);
+  tr.append(avg);
   table.append(tr);
 }
 
 async function createSelectMap() {
   const optionsMap = new Map();
 
-  optionsMap.set('all', 'default');
-  optionsMap.set('asia', 'asia');
-  optionsMap.set('europe', 'europe');
-  optionsMap.set('africa', 'africa');
-  optionsMap.set('america', 'america');
+  optionsMap.set('all', 'All');
+  optionsMap.set('india', 'India');
+  optionsMap.set('australian', 'Australian');
+  optionsMap.set('england', 'England');
   const select = document.createElement('select');
-  select.id = 'region';
-  select.name = 'region';
+  select.id = 'country';
+  select.name = 'country';
   optionsMap.forEach((val, key) => {
     const option = document.createElement('option');
     option.textContent = val;
@@ -38,7 +53,7 @@ async function createSelectMap() {
   });
 
   const div = document.createElement('div');
-  div.classList.add('region-select');
+  div.classList.add('country-select');
   div.append(select);
   return div;
 }
@@ -72,11 +87,12 @@ export default async function decorate(block) {
     parientDiv.append(await createTable(countries.href, null));
     countries.replaceWith(parientDiv);
   }
-  const dropdown = document.getElementById('region');
+  const dropdown = document.getElementById('country');
   dropdown.addEventListener('change', () => {
     let url = countries.href;
     if (dropdown.value !== 'all') {
       url = `${countries.href}?sheet=${dropdown.value}`;
+      console.log("url", url)
     }
     const tableE = parientDiv.querySelector(':scope > table');
     const promise = Promise.resolve(createTable(url, dropdown.value));
