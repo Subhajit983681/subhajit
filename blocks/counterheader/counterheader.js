@@ -15,7 +15,7 @@ export default function decorate(block) {
         div.className = 'counter-data';
     });
 
-    ul.append(innerDiv);
+    topDiv.append(innerDiv);
   });
 
   // ul.querySelectorAll('picture > img').forEach((img) => {
