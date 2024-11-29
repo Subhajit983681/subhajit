@@ -92,7 +92,6 @@ export default async function decorate(block) {
     let url = countries.href;
     if (dropdown.value !== 'all') {
       url = `${countries.href}?sheet=${dropdown.value}`;
-      console.log("url", url)
     }
     const tableE = parientDiv.querySelector(':scope > table');
     const promise = Promise.resolve(createTable(url, dropdown.value));
