@@ -12,7 +12,12 @@ export default function decorate(block) {
     }
 
     [...innerDiv.children].forEach((div) => {
-        div.className = 'counter-data';
+        // div.className = 'counter-data';
+        if (div.firstElementChild) {
+          div.className = 'counter-heading';
+        } else {
+          div.className = 'counter-sub-heading';
+        }
     });
 
     topDiv.append(innerDiv);
