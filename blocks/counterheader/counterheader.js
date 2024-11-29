@@ -11,6 +11,8 @@ export default function decorate(block) {
       innerDiv.append(row.firstElementChild);
     }
 
+    console.log("innerDiv", innerDiv);
+
     [...innerDiv.children].forEach((div) => {
         // div.className = 'counter-data';
         if (div.firstElementChild) {
