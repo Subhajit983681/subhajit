@@ -11,7 +11,7 @@ export default function decorate(block) {
       li.append(row.firstElementChild);
     }
 
-    [...li.children].forEach((div) => {
+    [...li.children].forEach((div, index) => {
         if (index === 0 && div.firstElementChild) {
             div.className = "counter";
           } else {
