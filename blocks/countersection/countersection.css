@@ -1,0 +1,23 @@
+ul.counter-block {
+    list-style: none;
+    display: grid;
+    padding: 0;
+}
+
+.for-four .ul.counter-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.counter p {
+    font-weight: 700;
+    font-size: 55px;
+    color: #bd0505; 
+    background-image: linear-gradient(45deg, #bd0505 7%, #83a702 68%, #e1c20e 76%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
