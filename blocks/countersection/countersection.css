@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 ul.counter-block {
     list-style: none;
     display: grid;
@@ -6,7 +9,7 @@ ul.counter-block {
 
 .for-four ul.counter-block {
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 35px;
 }
 
 .counter p {
@@ -18,5 +21,12 @@ ul.counter-block {
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
     text-align: center;
+    font-family: "Jaro", sans-serif;
+}
+
+.counter-content p{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
 }
 
