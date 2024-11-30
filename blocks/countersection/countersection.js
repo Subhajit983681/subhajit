@@ -14,6 +14,9 @@ export default function decorate(block) {
     [...li.children].forEach((div, index) => {
         if (index === 0 && div.firstElementChild) {
             div.className = "counter";
+            if (div.querySelector('strong')) {
+              div.className = 'counter-value';
+            }
           } else {
             div.className = "counter-content";
           }
