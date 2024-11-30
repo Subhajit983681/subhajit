@@ -4,9 +4,8 @@ ul.counter-block {
     padding: 0;
 }
 
-.for-four .ul.counter-block {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.for-four ul.counter-block {
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
