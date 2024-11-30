@@ -21,13 +21,6 @@
   border-radius: 10px 10px 0 0;
 }
 
-.countersection.for-four.block {
-  background: #f1f0f0;
-  padding: 30px;
-}
-
-
-
 @media only screen and (max-width: 640px) {
   .counter-sub-heading {
     width: 100%;
