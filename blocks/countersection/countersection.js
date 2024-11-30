@@ -30,14 +30,13 @@ export default function decorate(block) {
         div.className = "counter";
 
         const strongElement = div.querySelector('strong');
-        if (strongElement) { // Check if strongElement exists
+        if (strongElement) { 
           strongElement.className = "new-counter";
-
-          // Apply animation to the counter
+          
           const endValue = parseInt(strongElement.textContent, 10);
           if (!isNaN(endValue)) {
-            strongElement.textContent = '0'; // Set initial value to 0
-            animateCounter(strongElement, 0, endValue, 2000); // Animate from 0 to endValue in 2 seconds
+            strongElement.textContent = '0'; 
+            animateCounter(strongElement, 0, endValue, 2000); 
           }
         }
       } else {
