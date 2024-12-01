@@ -4,8 +4,12 @@
 }
 
 .button-container {
-    background-color: #dadada;
     padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.with-bg-gray .button-container {
+    background-color: #dadada;
 }
 
 .button-container p a {
