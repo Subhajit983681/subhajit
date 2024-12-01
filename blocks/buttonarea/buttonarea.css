@@ -6,6 +6,8 @@
 .button-container {
     padding: 30px;
     border-radius: 0 0 10px 10px;
+    border: 1px solid #dadada;
+    border-top: none;
 }
 
 .with-bg-gray .button-container {
