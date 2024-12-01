@@ -1,0 +1,21 @@
+.button-container p {
+    margin: 0;
+    text-align: center;
+}
+
+.button-container {
+    background-color: #dadada;
+    padding: 30px;
+}
+
+.button-container p a {
+    margin: 0 !important;
+    line-height: 0 !important;
+    font-size: 20px;
+    font-weight: 400 !important;
+    padding: 25px 65px !important;
+    background: transparent !important;
+    color: #088f2d !important;
+    border: 2px solid #088f2d !important;
+    border-radius: 5px !important;
+}
